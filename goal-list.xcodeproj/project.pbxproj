@@ -16,6 +16,10 @@
 		041BEC98221F476D00BEF5C1 /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BEC97221F476D00BEF5C1 /* GoalCell.swift */; };
 		041BEC9A221F562900BEF5C1 /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BEC99221F562900BEF5C1 /* GoalType.swift */; };
 		041BEC9C221F5E0300BEF5C1 /* CreateGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BEC9B221F5E0300BEF5C1 /* CreateGoalVC.swift */; };
+		041BEC9E221F621A00BEF5C1 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BEC9D221F621A00BEF5C1 /* UIViewControllerExt.swift */; };
+		041BECA0221F626C00BEF5C1 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BEC9F221F626C00BEF5C1 /* UIViewExt.swift */; };
+		041BECA2221F62B800BEF5C1 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BECA1221F62B800BEF5C1 /* RoundedButton.swift */; };
+		041BECA6221F6A4A00BEF5C1 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BECA5221F6A4A00BEF5C1 /* UIButtonExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		041BEC97221F476D00BEF5C1 /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 		041BEC99221F562900BEF5C1 /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
 		041BEC9B221F5E0300BEF5C1 /* CreateGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalVC.swift; sourceTree = "<group>"; };
+		041BEC9D221F621A00BEF5C1 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		041BEC9F221F626C00BEF5C1 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		041BECA1221F62B800BEF5C1 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		041BECA5221F6A4A00BEF5C1 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				041BEC97221F476D00BEF5C1 /* GoalCell.swift */,
+				041BECA1221F62B800BEF5C1 /* RoundedButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -104,6 +113,9 @@
 		041BEC96221F3C7100BEF5C1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				041BEC9D221F621A00BEF5C1 /* UIViewControllerExt.swift */,
+				041BEC9F221F626C00BEF5C1 /* UIViewExt.swift */,
+				041BECA5221F6A4A00BEF5C1 /* UIButtonExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -180,10 +192,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				041BEC98221F476D00BEF5C1 /* GoalCell.swift in Sources */,
+				041BECA6221F6A4A00BEF5C1 /* UIButtonExt.swift in Sources */,
 				041BEC9C221F5E0300BEF5C1 /* CreateGoalVC.swift in Sources */,
 				041BEC9A221F562900BEF5C1 /* GoalType.swift in Sources */,
 				041BEC87221F3C1400BEF5C1 /* goal_list.xcdatamodeld in Sources */,
+				041BECA2221F62B800BEF5C1 /* RoundedButton.swift in Sources */,
+				041BECA0221F626C00BEF5C1 /* UIViewExt.swift in Sources */,
 				041BEC81221F3C1400BEF5C1 /* GoalsVC.swift in Sources */,
+				041BEC9E221F621A00BEF5C1 /* UIViewControllerExt.swift in Sources */,
 				041BEC7F221F3C1400BEF5C1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

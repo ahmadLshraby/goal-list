@@ -20,7 +20,9 @@ class GoalsVC: UIViewController {
     }
 
     @IBAction func addGoalBtn(_ sender: UIButton) {
-        tableView.isHidden = false
+        if let createGoalVC = storyboard?.instantiateViewController(withIdentifier: "CreateGoalVC") as? CreateGoalVC {
+            presentDetail(createGoalVC)
+        }
     }
     
     

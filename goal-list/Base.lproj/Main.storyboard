@@ -13,7 +13,7 @@
         <!--GoalsVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GoalsVC" customModule="goal_list" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoalVC" id="BYZ-38-t0r" customClass="GoalsVC" customModule="goal_list" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,6 @@
                                         <state key="normal" image="addGoal"/>
                                         <connections>
                                             <action selector="addGoalBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ch5-Av-QXG"/>
-                                            <segue destination="x7X-pL-8Kp" kind="presentation" id="Cvc-Sz-nrc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -94,7 +93,6 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="55" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="55" id="nC5-FN-vey"/>
-                                                                        <constraint firstAttribute="height" constant="20" id="x2K-S3-urY"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                                                     <nil key="textColor"/>
@@ -194,7 +192,7 @@
         <!--Create GoalVC-->
         <scene sceneID="RiH-D3-sT2">
             <objects>
-                <viewController id="x7X-pL-8Kp" customClass="CreateGoalVC" customModule="goal_list" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateGoalVC" id="x7X-pL-8Kp" customClass="CreateGoalVC" customModule="goal_list" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rR2-cO-JDz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -244,7 +242,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Oes-RV-peP">
                                         <rect key="frame" x="0.0" y="220" width="335" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98p-tH-kfe">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98p-tH-kfe" customClass="RoundedButton" customModule="goal_list" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="157.5" height="50"/>
                                                 <color key="backgroundColor" red="0.42745098040000001" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -254,11 +252,16 @@
                                                 <state key="normal" title="SHORT TERM">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="shortTermBtn:" destination="x7X-pL-8Kp" eventType="touchUpInside" id="DHf-lU-qnT"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THU-It-Sxi">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THU-It-Sxi" customClass="RoundedButton" customModule="goal_list" customModuleProvider="target">
                                                 <rect key="frame" x="177.5" y="0.0" width="157.5" height="50"/>
                                                 <color key="backgroundColor" red="0.69803921568627447" green="0.8666666666666667" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -268,6 +271,11 @@
                                                 <state key="normal" title="LONG TERM">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="longTermBtn:" destination="x7X-pL-8Kp" eventType="touchUpInside" id="Np9-87-uEJ"/>
                                                 </connections>
