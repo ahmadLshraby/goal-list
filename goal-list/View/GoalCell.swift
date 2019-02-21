@@ -19,9 +19,9 @@ class GoalCell: UITableViewCell {
         // Initialization code
     }
     
-    func configureCell(description: String, type: String, goalProgressAmount: Int) {
+    func configureCell(description: String, type: GoalType, goalProgressAmount: Int) {
         self.goalDescriptionLbl.text = description
-        self.goalTypeLbl.text = type
+        self.goalTypeLbl.text = type.rawValue   // as we need a String so take the value of the case in enum GoalType
         self.goalProgressLbl.text = String(describing: goalProgressAmount)
     }
 

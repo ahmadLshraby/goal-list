@@ -15,12 +15,35 @@ class GoalsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let goal = Goal()    // instance of core data Model
-        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     @IBAction func addGoalBtn(_ sender: UIButton) {
+        tableView.isHidden = false
     }
+    
+    
+    
     
 }
 
+extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath) as? GoalCell {
+            cell.configureCell(description: "take shower", type: .shortTerm, goalProgressAmount: 2)
+            return cell
+        }else {
+            return UITableViewCell()
+        }
+    }
+}
