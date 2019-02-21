@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
 class GoalsVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let goal = Goal()    // instance of core data Model
+        
     }
 
     @IBAction func addGoalBtn(_ sender: UIButton) {
