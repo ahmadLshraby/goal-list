@@ -88,19 +88,27 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
             self.remove(atIndexPath: indexPath)
             self.fetchDataFromCoreData()
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.deleteRows(at: [indexPath], with: .automatic)  // delete the row of that indexPath
         }
-        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         
-        return [deleteAction]
+        let addAction = UITableViewRowAction(style: .normal, title: "ADD 1") { (rowAction, indexPath) in
+            self.setProgress(atIndexPath: indexPath)
+            tableView.reloadRows(at: [indexPath], with: .automatic)   // reload the row of that indexPath
+        }
+        
+        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        addAction.backgroundColor = #colorLiteral(red: 0.9176470588, green: 0.662745098, blue: 0.2666666667, alpha: 1)
+        
+        return [deleteAction, addAction]
     }
     
     
 }
 
-// MARK: Fetch data from core data Goal Model & Delete data
+// MARK: Core Data Proccess
 extension GoalsVC {
     
+    // Fetch
     func fetch(handler: @escaping(_ success: Bool) -> Void) {
         // get managed object context
         if let managedContext = appDelegate?.persistentContainer.viewContext {
@@ -116,6 +124,7 @@ extension GoalsVC {
         }else { return }
     }
     
+    // Delete
     func remove(atIndexPath indexPath: IndexPath) {
         // get managed object context
         if let managedContext = appDelegate?.persistentContainer.viewContext {
@@ -127,6 +136,24 @@ extension GoalsVC {
                 print(error.localizedDescription)
             }
         }else { return }
+    }
+    
+    // Modify
+    func setProgress(atIndexPath indexPath: IndexPath) {
+        if let managedContext = appDelegate?.persistentContainer.viewContext {
+            let chosenGoal = goals[indexPath.row]
+            
+            if chosenGoal.goalProgress < chosenGoal.goalCompletionValue {
+                chosenGoal.goalProgress = chosenGoal.goalProgress + 1
+            }else {
+                return
+            }
+            do {
+                try managedContext.save()
+            }catch {
+                print(error.localizedDescription)
+            }
+        }
     }
         
         

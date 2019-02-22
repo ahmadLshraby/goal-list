@@ -147,18 +147,39 @@
                                                     <color key="textColor" red="0.42745098040000001" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vf8-au-Jxw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOAL COMPLETED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grw-IS-scf">
+                                                            <rect key="frame" x="44.5" y="14.5" width="286" height="41"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="30"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.91764705879999997" green="0.66274509800000003" blue="0.2666666667" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="grw-IS-scf" firstAttribute="centerY" secondItem="vf8-au-Jxw" secondAttribute="centerY" id="Czv-YE-Qad"/>
+                                                        <constraint firstItem="grw-IS-scf" firstAttribute="centerX" secondItem="vf8-au-Jxw" secondAttribute="centerX" id="qqX-gU-ZUl"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="zDu-1d-8Rf" secondAttribute="bottom" id="AuU-ek-XYI"/>
                                                 <constraint firstItem="zDu-1d-8Rf" firstAttribute="top" secondItem="4lY-Kk-7w0" secondAttribute="topMargin" id="DGg-gx-gpj"/>
+                                                <constraint firstAttribute="trailing" secondItem="vf8-au-Jxw" secondAttribute="trailing" id="HhB-cx-cJz"/>
                                                 <constraint firstItem="oso-wN-BHB" firstAttribute="leading" secondItem="zDu-1d-8Rf" secondAttribute="trailing" constant="10" id="Jsj-Nx-eqy"/>
                                                 <constraint firstItem="zDu-1d-8Rf" firstAttribute="leading" secondItem="4lY-Kk-7w0" secondAttribute="leadingMargin" id="L5v-Ns-RuS"/>
+                                                <constraint firstAttribute="bottom" secondItem="vf8-au-Jxw" secondAttribute="bottom" id="LyH-Cv-UHz"/>
                                                 <constraint firstItem="oso-wN-BHB" firstAttribute="top" secondItem="4lY-Kk-7w0" secondAttribute="top" constant="8" id="SJM-I8-D5H"/>
+                                                <constraint firstItem="vf8-au-Jxw" firstAttribute="leading" secondItem="4lY-Kk-7w0" secondAttribute="leading" id="ZXN-RR-Q0u"/>
+                                                <constraint firstItem="vf8-au-Jxw" firstAttribute="top" secondItem="4lY-Kk-7w0" secondAttribute="top" id="eFx-F5-3I7"/>
                                                 <constraint firstAttribute="bottom" secondItem="oso-wN-BHB" secondAttribute="bottom" constant="8" id="u2h-gR-8Rl"/>
                                                 <constraint firstAttribute="trailing" secondItem="oso-wN-BHB" secondAttribute="trailing" constant="8" id="uHd-wX-TKb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="completeView" destination="vf8-au-Jxw" id="21I-cm-Ui6"/>
                                             <outlet property="goalDescriptionLbl" destination="JhS-FA-uEb" id="qem-kD-4Ce"/>
                                             <outlet property="goalProgressLbl" destination="oso-wN-BHB" id="l8C-30-IWk"/>
                                             <outlet property="goalTypeLbl" destination="P9T-7I-dF9" id="KIX-gr-7do"/>
@@ -295,7 +316,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5I-tP-4nT">
                                         <rect key="frame" x="0.0" y="249" width="375" height="50"/>
-                                        <color key="backgroundColor" red="0.91764705882352937" green="0.66274509803921566" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.91764705879999997" green="0.66274509800000003" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="AoX-1y-9QW"/>
                                         </constraints>
