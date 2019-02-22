@@ -31,4 +31,21 @@ extension UIViewController {
         
         dismiss(animated: false, completion: nil)
     }
+    
+    // to dismiss the third layer of FinishGoalVC to the first one GoalsVC we need to dismiss the second when it pass data to the third
+    func presentSecondDetail(_ viewControllerToPresent: UIViewController) {
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        
+        if let presentedVC = presentedViewController  {
+            // dismiss the second , add the third , present the third so when the third is dismissed it goes to the firsts
+            presentedVC.dismiss(animated: false) {
+                self.view.window?.layer.add(transition, forKey: kCATransition)
+                self.present(viewControllerToPresent, animated: false, completion: nil)
+            }
+        }else { return }
+    }
+    
 }

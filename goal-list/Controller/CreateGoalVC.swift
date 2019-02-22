@@ -51,7 +51,7 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
             if let finishGoalVC = storyboard?.instantiateViewController(withIdentifier: "FinishGoalVC") as? FinishGoalVC {
                 // pass the data from CreateGoalVC to FinishGoalVC
                 finishGoalVC.initData(description: goalTxt.text, type: goalType)
-                presentDetail(finishGoalVC)
+                presentingViewController?.presentSecondDetail(finishGoalVC)
             }else { return }
         }
     }
