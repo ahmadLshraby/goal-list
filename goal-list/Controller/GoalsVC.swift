@@ -25,6 +25,12 @@ class GoalsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)// as we want it every time the view appear as viewDidLoad we get it only one time
+        fetchDataFromCoreData()
+        self.tableView.reloadData()
+
+    }
+    
+    func fetchDataFromCoreData() {
         self.fetch { (success) in
             if success {
                 if self.goals.count >= 1 {
@@ -32,7 +38,6 @@ class GoalsVC: UIViewController {
                 }else {
                     self.tableView.isHidden = true
                 }
-                self.tableView.reloadData()
             }else {
                 return
             }
@@ -70,9 +75,30 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
+            self.remove(atIndexPath: indexPath)
+            self.fetchDataFromCoreData()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        
+        return [deleteAction]
+    }
+    
+    
 }
 
-// MARK: Fetch data from core data Goal Model
+// MARK: Fetch data from core data Goal Model & Delete data
 extension GoalsVC {
     
     func fetch(handler: @escaping(_ success: Bool) -> Void) {
@@ -89,4 +115,19 @@ extension GoalsVC {
             }
         }else { return }
     }
+    
+    func remove(atIndexPath indexPath: IndexPath) {
+        // get managed object context
+        if let managedContext = appDelegate?.persistentContainer.viewContext {
+            // delete then save
+            managedContext.delete(goals[indexPath.row])    // remove from the array goals so remove from the Goal Model which remove from core data
+            do {
+            try managedContext.save()
+            }catch {
+                print(error.localizedDescription)
+            }
+        }else { return }
+    }
+        
+        
 }
