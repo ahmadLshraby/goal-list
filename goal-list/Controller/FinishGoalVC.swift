@@ -43,6 +43,7 @@ class FinishGoalVC: UIViewController {
         }
     }
     
+    // MARK: Save to core data Goal Model
     func save(handler: @escaping(_ success: Bool) -> Void) {
         // get managed object context
         if let managedContext = appDelegate?.persistentContainer.viewContext {
