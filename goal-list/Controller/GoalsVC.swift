@@ -22,7 +22,7 @@ class GoalsVC: UIViewController {
     @IBAction func addGoalBtn(_ sender: UIButton) {
         if let createGoalVC = storyboard?.instantiateViewController(withIdentifier: "CreateGoalVC") as? CreateGoalVC {
             presentDetail(createGoalVC)
-        }
+        }else { return }
     }
     
     
